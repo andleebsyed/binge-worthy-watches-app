@@ -1,0 +1,27 @@
+body {
+  background-color: lightgrey;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.divstyle {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 1.5rem;
+  border: 3px solid rgb(85, 94, 107);
+  width: 70%;
+  margin: 1rem 0rem;
+  border-radius: 0.5rem;
+  text-align: left;
+}
+
+.buttonstyle {
+  cursor: pointer;
+  background: rgb(229, 231, 235);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  margin: 1rem 0.3rem;
+}
