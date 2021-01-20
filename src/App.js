@@ -81,11 +81,12 @@ export default function App() {
       </button>
 
       <ul style={{ listStyle: "none" }}>
-        {names.map(function (name, index) {
+        {[names].map(function (name, index) {
           return (
             <div className="divstyle">
               <li key={index}>
                 {name}
+
                 <small>{ratings[index]}</small>
               </li>
             </div>
