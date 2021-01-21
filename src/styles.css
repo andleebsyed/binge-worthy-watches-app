@@ -17,11 +17,16 @@ body {
   text-align: left;
 }
 
-.buttonstyle {
+.buttonStyle {
   cursor: pointer;
   background: rgb(229, 231, 235);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid black;
   margin: 1rem 0.3rem;
+}
+
+.list {
+  list-style: none;
+  font-weight: bold;
 }

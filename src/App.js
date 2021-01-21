@@ -1,98 +1,89 @@
 import React, { useState } from "react";
 import "./styles.css";
+var bingeWorthy = {
+  "Sci-Fi": [
+    {
+      name: "IronMan",
+      rating: "5/5"
+    },
+    {
+      name: "Predestination",
+      rating: "4.8/5"
+    },
+    {
+      name: "Interstellar",
+      rating: "4.9/5"
+    }
+  ],
+  Action: [
+    {
+      name: "John Wick",
+      rating: "4.3/5"
+    },
+    {
+      name: "Gemini Man",
+      rating: "4.7/5"
+    },
+    {
+      name: "Django Unchained",
+      rating: "4.3/5"
+    }
+  ],
 
-var scifiMoviesObject = {
-  "Iron Man ": "5/5",
-  "Batman ": "4.5/5",
-  "Lord of the rings ": "4/5"
+  Shows: [
+    {
+      name: "F.R.I.E.N.D.S",
+      rating: "5/5"
+    },
+    {
+      name: "Money Hiest",
+      rating: "4.6/5"
+    },
+    {
+      name: "Breaking Bad",
+      rating: "4.9/5"
+    }
+  ]
 };
-
-var showsObject = {
-  "Money Hiest": "5/5",
-  "F.R.I.E.N.D.S": "4.5/5",
-  "Breaking Bad": "5/5"
-};
-
-var actionMoviesObject = {
-  "Die Hard": "3.5/5",
-  "Mission Impossible": "4/5",
-  "John Wick": "4.8/5"
-};
-var scifiNames = Object.keys(scifiMoviesObject);
-var scifiRating = Object.values(scifiMoviesObject);
-
-var showsNames = Object.keys(showsObject);
-var showsRating = Object.values(showsObject);
-
-var actionNames = Object.keys(actionMoviesObject);
-var actionRating = Object.values(actionMoviesObject);
 
 export default function App() {
-  var [names, setNames] = useState(" ");
-  var [ratings, setRatings] = useState(" ");
+  var [currentWatch, setcurrentWatch] = useState("Action");
 
-  function scifiClickHandler() {
-    var names = scifiNames;
-    var ratings = scifiRating;
-    setNames(names);
-    setRatings(ratings);
+  function buttonOnClickHandler(genre) {
+    setcurrentWatch(genre);
   }
-
-  function showsClickHandler() {
-    var names = showsNames;
-    var ratings = showsRating;
-    setNames(names);
-    setRatings(ratings);
-  }
-
-  function actionClickHandler() {
-    var names = actionNames;
-    var ratings = actionRating;
-    setNames(names);
-    setRatings(ratings);
-  }
-
   return (
     <div className="App">
       <h1 style={{ fontSize: "large", fontWeight: "bold" }}>
         🍿Binge-Worthy🎬🍿
       </h1>
-      <p>Best shows and movies according to me!.Select Genre to get started</p>
-      <button
-        className="buttonstyle"
-        onClick={() => scifiClickHandler()}
-        style={{ padding: "1rem", margin: "1rem" }}
-      >
-        Sci-Fi
-      </button>
-      <button
-        className="buttonstyle"
-        onClick={() => showsClickHandler()}
-        style={{ padding: "1rem", margin: "1rem" }}
-      >
-        Shows
-      </button>
-      <button
-        className="buttonstyle"
-        onClick={() => actionClickHandler()}
-        style={{ padding: "1rem", margin: "1rem" }}
-      >
-        Action
-      </button>
+      <div>
+        <p>
+          Best shows and movies according to me!.Select Genre to get started
+        </p>
+        {Object.keys(bingeWorthy).map((genre) => (
+          <button
+            className="buttonStyle"
+            onClick={() => buttonOnClickHandler(genre)}
+          >
+            {genre}
+          </button>
+        ))}
+      </div>
+      <hr />
 
-      <ul style={{ listStyle: "none" }}>
-        {[names].map(function (name, index) {
-          return (
+      <div>
+        <ul className="list">
+          {bingeWorthy[currentWatch].map((movies) => (
             <div className="divstyle">
-              <li key={index}>
-                {name}
-
-                <small>{ratings[index]}</small>
+              <li className="items">
+                <div>Name: {movies.name}</div>
+                <div>Rating: {movies.rating}</div>
               </li>
             </div>
-          );
-        })}
-      </ul>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
