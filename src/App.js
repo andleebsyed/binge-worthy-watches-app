@@ -47,7 +47,7 @@ var bingeWorthy = {
 };
 
 export default function App() {
-  var [currentWatch, setcurrentWatch] = useState("Action");
+  var [currentWatch, setcurrentWatch] = useState("Sci-Fi");
 
   function buttonOnClickHandler(genre) {
     setcurrentWatch(genre);
