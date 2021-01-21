@@ -76,7 +76,7 @@ export default function App() {
         <ul className="list">
           {bingeWorthy[currentWatch].map((movies) => (
             <div className="divstyle">
-              <li className="items">
+              <li>
                 <div>Name: {movies.name}</div>
                 <div>Rating: {movies.rating}</div>
               </li>

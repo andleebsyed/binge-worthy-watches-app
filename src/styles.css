@@ -12,7 +12,8 @@ body {
   padding: 1.5rem;
   border: 3px solid rgb(85, 94, 107);
   width: 70%;
-  margin: 1rem 0rem;
+  margin: auto;
+  margin-bottom: 1.4rem;
   border-radius: 0.5rem;
   text-align: left;
 }
